@@ -1,0 +1,4 @@
+beebotte==0.4.0
+psutil==4.0.0
+requests==2.9.1
+spidev==3.2
