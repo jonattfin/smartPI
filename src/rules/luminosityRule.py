@@ -1,10 +1,13 @@
+from .spRule import SpRule
 
-class LuminosityRule(object):
+class LuminosityRule(SpRule):
     """ represents the rule that will handle the luminosity """
 
-    def __init__(self):
-        self.id = 'LUMINOSITY_RULE'
-        self.periodicity = 3
+    def __init__(self, periodicity, sp_interface, pin_no, display):
+        super().__init__('LUMINOSITY_RULE', periodicity. sp_interface, pin_no)
+        self.display = display
 
     def execute(self):
-        print('luminosity rule executed')
+        raw_value = SpRule.execute(self)
+        # transform the value
+        self.display.write(raw_value)

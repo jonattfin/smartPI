@@ -7,7 +7,7 @@ class RuleEngine(object):
     def __init__(self):
         """create a new rule engine"""
         self.rules = []
-        self.ruleExecutions = {}
+        self.rules_executions_time = {}
 
     @property
     def length(self):
@@ -22,23 +22,25 @@ class RuleEngine(object):
         """add many rules to the rule engine."""
         self.rules.extend(rules)
 
-    def executeRuleAndKeepTime(self, rule):
-        rule.execute()
-        current_time = datetime.now()
-        print(current_time)
-        self.ruleExecutions[rule.id] = current_time
+    def execute_rule_and_keep_time(self, rule):
+        try:
+            rule.execute()
+            self.rules_executions_time[rule.id] = datetime.now()
+        except Exception as e:
+            # todo
+            pass
 
     def execute(self):
         """execute the rules from the rule engine."""
 
         while True:
             for rule in self.rules:
-                if not rule.id in self.ruleExecutions:
-                    self.executeRuleAndKeepTime(rule)
+                if not rule.id in self.rules_executions_time:
+                    self.execute_rule_and_keep_time(rule)
 
-                ruleExecutorTime = self.ruleExecutions[rule.id]
+                rule_execution_time = self.rules_executions_time[rule.id]
 
-                if (datetime.now() - ruleExecutorTime).seconds >= rule.periodicity:
-                    self.executeRuleAndKeepTime(rule)
+                if (datetime.now() - rule_execution_time).seconds >= rule.periodicity:
+                    self.execute_rule_and_keep_time(rule)
 
             time.sleep(1)
