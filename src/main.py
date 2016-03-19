@@ -11,8 +11,8 @@ def main():
 
     Settings = namedtuple('Settings', 'periodicity sp_interface pin_no number_of_reads time_between_reads')
 
-    humidity_rule = HumidityRule(Settings(10*60, sp_interface, 0, 6, 10), Display('humidity'))
-    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 1, 6, 10), Display('temperature'))
+    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 6, 10), Display('temperature'))
+    humidity_rule = HumidityRule(Settings(10*60, sp_interface, 1, 6, 10), Display('humidity'))
     luminosity_rule = LuminosityRule(Settings(5*60, sp_interface, 2, 6, 10), Display('luminosity'))
 
     # add the rules

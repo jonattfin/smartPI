@@ -24,4 +24,6 @@ class SpRule(Rule):
             time.sleep(self.settings.time_between_reads)
 
         # calculate the average, and rounds it to 2 decimals
-        return round((sum(values) / len(values)), 2)
+        value = round((sum(values) / len(values)), 2)
+        print('sending rawValue {0} for rule {1}', format(value, self.id))
+        return value

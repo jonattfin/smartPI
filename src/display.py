@@ -15,7 +15,6 @@ class Display:
 
     def write(self, value):
         try:
-            print(value)
             #Send value to Beebotte
             resource.write(value)
         except Exception:

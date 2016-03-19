@@ -24,6 +24,7 @@ class RuleEngine(object):
 
     def execute_rule_and_keep_time(self, rule):
         try:
+            print('executed rule with id {0} at {1}'.format(rule.id, datetime.now()))
             rule.execute()
             self.rules_executions_time[rule.id] = datetime.now()
         except Exception as e:
