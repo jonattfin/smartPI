@@ -1,6 +1,6 @@
 import spidev
 
-class SPInterface(object):
+class SpInterface(object):
     """ The SP Interface class provide access to the sensors on the Serial Peripheral Interface (SPI)"""
 
     def __init__(self):

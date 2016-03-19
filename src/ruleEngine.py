@@ -27,7 +27,7 @@ class RuleEngine(object):
             rule.execute()
             self.rules_executions_time[rule.id] = datetime.now()
         except Exception as e:
-            # todo
+            print(e)
             pass
 
     def execute(self):

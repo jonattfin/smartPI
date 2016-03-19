@@ -3,18 +3,17 @@ from spInterface import SpInterface
 from display import Display
 from rules import HumidityRule, TemperatureRule, LuminosityRule
 
+from collections import namedtuple
+
 def main():
     rule_engine = RuleEngine()
     sp_interface = SpInterface()
 
-    humidity_display = Display('humidity')
-    rule_engine.add(HumidityRule(periodicity=10, sp_interface=sp_interface, pin_no=1, display=humidity_display))
+    Settings = namedtuple('Settings', 'periodicity sp_interface pin_no number_of_reads time_between_reads')
 
-    temperature_display = Display('temperature')
-    rule_engine.add(TemperatureRule(periodicity=10, sp_interface=sp_interface, pin_no=0, display=temperature_display))
-
-    luminosity_display = Display('luminosity')
-    rule_engine.add(LuminosityRule(periodicity=10, sp_interface=sp_interface, pin_no=0, display=luminosity_display))
+    rule_engine.add(HumidityRule(Settings(3, sp_interface, 1, 1, 1), Display('humidity')))
+    rule_engine.add(TemperatureRule(Settings(5, sp_interface, 0, 1, 1), Display('temperature')))
+    rule_engine.add(LuminosityRule(Settings(10, sp_interface, 0, 1, 1), Display('luminosity')))
 
     rule_engine.execute()
 
