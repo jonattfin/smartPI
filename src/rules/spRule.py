@@ -4,13 +4,17 @@ import time
 class SpRule(Rule):
     """ represents the SP base class rule implemented by SP rules """
 
-    def __init__(self, id, settings):
+    def __init__(self, id, settings, displays):
         """ sets the parameters needed by the rule """
 
         super().__init__(id, settings.periodicity)
         self.settings = settings
+        self.displays = displays
 
-    def execute(self):
+    def convert(self, value):
+        return value;
+
+    def read(self):
         """ execute the rule """
         values = []
 
@@ -24,6 +28,11 @@ class SpRule(Rule):
             time.sleep(self.settings.time_between_reads)
 
         # calculate the average, and rounds it to 2 decimals
-        value = round((sum(values) / len(values)), 2)
-        print('sending rawValue {0} for rule {1}', format(value, self.id))
-        return value
+        return round((sum(values) / len(values)), 2)
+
+    def execute(self):
+        value = self.read()
+        converted_value = self.convert(value)
+
+        for display in self.displays:
+            display.write(converted_value)
