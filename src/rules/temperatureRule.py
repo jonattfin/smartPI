@@ -7,7 +7,7 @@ class TemperatureRule(SpRule):
         super().__init__('TEMPERATURE_RULE', settings, displays)
 
     def convert(self, value):
-        voltage = raw_value * 3.3
+        voltage = value * 3.3
         voltage /= 1024.0
         tempCelsius = (voltage-0.5)*100
 

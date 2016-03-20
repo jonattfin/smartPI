@@ -14,7 +14,7 @@ def main():
     temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 6, 10, ), [Display('temperature')])
     humidity_rule = HumidityRule(Settings(10*60, sp_interface, 1, 6, 10), [Display('humidity')])
     luminosity_rule = LuminosityRule(Settings(5*60, sp_interface, 2, 6, 10), [Display('luminosity')])
-    psutil_rule = PsutilRule(1*60), [Display('cpu'), Display('memory')])
+    psutil_rule = PsutilRule(1*60, [Display('cpu'), Display('memory')])
 
     # add the rules
     rule_engine.add_many([psutil_rule, temp_rule, humidity_rule, luminosity_rule])

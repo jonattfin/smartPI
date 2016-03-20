@@ -16,8 +16,7 @@ class PsutilRule(Rule):
         ]
 
         for display, param in zip(self.displays, params):
-            print(param)
-            # self.display.write(param)
+            self.display.write(param)
 
 if __name__ == '__main__':
     rule = PsutilRule(10)
