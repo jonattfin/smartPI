@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from .rule import Rule
 import random
+import time
 
 class ButtonRule(Rule):
     """ represents the rule that will handle the button press event """
@@ -36,38 +37,3 @@ class ButtonRule(Rule):
                 index = index + 1
                 if index >= random_index:
                     break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    def execute(self):
-
-
-
-        for display, param in zip(self.displays, params):
-            display.write(param)
-
-if __name__ == '__main__':
-    rule = PsutilRule(10)
-    rule.execute()
