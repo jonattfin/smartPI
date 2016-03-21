@@ -13,7 +13,7 @@ class ButtonRule(Rule):
         GPIO.setmode(GPIO.BCM)
 
         self.pins = {4: 'blue', 17: 'red', 27: 'green', 22: 'yellow'}
-        for pin in pins:
+        for pin in self.pins:
             GPIO.setup(pin, GPIO.OUT)
 
     def execute(self):
