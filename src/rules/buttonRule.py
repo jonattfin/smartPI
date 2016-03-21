@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from .rule import Rule
 import random
 import time
+from datetime import datetime
 
 class ButtonRule(Rule):
     """ represents the rule that will handle the button press event """
@@ -20,7 +21,7 @@ class ButtonRule(Rule):
     def execute(self):
         current_value = self.settings.sp_interface.readADC(self.settings.pin_no)
 
-        if (current_value == 1023):
+        if (current_value == 1023 or datetime.now().second % 5 == 0):
             random_index = random.randint(0, len(self.pins) - 1)
             print('index is {0}'.format(random_index))
 
