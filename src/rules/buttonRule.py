@@ -5,7 +5,7 @@ import random
 class ButtonRule(Rule):
     """ represents the rule that will handle the button press event """
 
-    def __init__(self, settings, periodicity, displays):
+    def __init__(self, settings, displays):
         super().__init__('BUTTON_RULE', settings.periodicity)
         self.settings = settings
         self.displays = displays
@@ -21,6 +21,7 @@ class ButtonRule(Rule):
 
         if (current_value == 1023):
             random_index = random.randint(0, len(self.pins) - 1)
+            print('index is {0}'.format(random_index))
 
             index = 0
             for pin, color in self.pins.items():

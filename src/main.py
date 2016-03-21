@@ -16,11 +16,11 @@ def main():
     psutil_rule = PsutilRule(1*60, [Display('cpu'), Display('memory')])
 
     led_displays = [Display('blue_led'), Display('red_led'), Display('green_led'), Display('yellow_led')]
-    button_rule = ButtonRule(Settings(5, sp_interface, 3), led_displays)
+    button_rule = ButtonRule(Settings(3, sp_interface, 3, 0, 0), led_displays)
 
     # add the rules
     rule_engine = RuleEngine()
-    rule_engine.add_many([psutil_rule, temp_rule, humidity_rule, luminosity_rule])
+    rule_engine.add_many([button_rule, psutil_rule, temp_rule, humidity_rule, luminosity_rule])
 
     # fire up the engine
     rule_engine.execute()
