@@ -11,9 +11,9 @@ def main():
     sp_interface = SpInterface()
     Settings = namedtuple('Settings', 'periodicity sp_interface pin_no number_of_reads time_between_reads')
 
-    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 5, 2), [Display('temperature'), CommonApi('temperatures')])
-    humidity_rule = HumidityRule(Settings(15*60, sp_interface, 1, 5, 2), [Display('humidity'), CommonApi('humidities')])
-    luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 2, 5, 2), [Display('luminosity'), CommonApi('luminosities')])
+    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 5, 2), [Display('temperature')])
+    humidity_rule = HumidityRule(Settings(15*60, sp_interface, 1, 5, 2), [Display('humidity')])
+    luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 2, 5, 2), [Display('luminosity')])
     psutil_rule = PsutilRule(4*60, [Display('cpu'), Display('memory')])
 
     led_displays = [Display('blue_led'), Display('red_led'), Display('green_led'), Display('yellow_led')]
