@@ -3,3 +3,5 @@ from .luminosityRule import LuminosityRule
 from .temperatureRule import TemperatureRule
 from .psutilRule import PsutilRule
 from .buttonRule import ButtonRule
+from .motionRule import MotionRule
+from .cameraRule import CameraRule
