@@ -1,6 +1,7 @@
 from picamera import PiCamera
 from time import sleep
 from datetime import datetime
+import distutils.dir_util
 
 from .rule import Rule
 
@@ -12,14 +13,25 @@ class CameraRule(Rule):
         self.displays = displays
         self.camera = PiCamera()
 
+    def create_image(self):
+        now = datetime.now()
+
+        filename = now.strftime("%H.%M.%S_%Y-%m-%d.jpg")
+        path = '{0}_{1}'.format(now.month, now.day)
+
+        distutils.dir_util.mkpath(path)
+        self.camera.capture('{0}\\{1}', path, filename)
+
     def execute(self):
-        filename = datetime.now().strftime("%H.%M.%S_%Y-%m-%d.jpg")
-        self.camera.capture(filename)
+        self.create_image()
         sleep(5)
 
-        display.write(0)
-        display.write(1 * 10)
-        display.write(0)
+        for display in self.displays:
+            display.write(0)
+            sleep(0.5)
+            display.write(10)
+            sleep(0.5)
+            display.write(0)
 
 
 

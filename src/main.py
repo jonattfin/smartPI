@@ -15,7 +15,7 @@ def main():
     humidity_rule = HumidityRule(Settings(15*60, sp_interface, 1, 5, 2), [Display('humidity')])
     luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 2, 5, 2), [Display('luminosity')])
     motion_rule = MotionRule(Settings(1*60, sp_interface, 3, 5, 2), [Display('presence')])
-    camera_rule = CameraRule(Settings(1*60 ), [Display('image')])
+    camera_rule = CameraRule(1*60, [Display('image')])
     psutil_rule = PsutilRule(4*60, [Display('cpu'), Display('memory')])
 
     # led_displays = [Display('blue_led'), Display('red_led'), Display('green_led'), Display('yellow_led')]

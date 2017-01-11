@@ -6,11 +6,13 @@
 ############################################################
 
 from beebotte import *
+from beebotteCredentials import BeebotteCredentials
 
 class Display:
     def __init__(self, resource_name, channel_name = 'RaspberryPi'):
-        ### Replace API_KEY and SECRET_KEY with those of your account
-        bbt = BBT('API_KEY', 'SECRET_KEY')
+        
+        (key, secret) = BeebotteCredentials().getKeys()
+        bbt = BBT(key, secret)
 
         self.resource = Resource(bbt, channel_name, resource_name)
 
@@ -18,6 +20,7 @@ class Display:
         try:
             #Send value to Beebotte
             self.resource.write(value)
+            print(value)
         except Exception:
             pass
             ## Process exception here
