@@ -20,7 +20,7 @@ class CameraRule(Rule):
         path = '{0}_{1}'.format(now.month, now.day)
 
         distutils.dir_util.mkpath(path)
-        self.camera.capture('{0}\\{1}', path, filename)
+        self.camera.capture('{0}\\{1}'.format(path, filename))
 
     def execute(self):
         self.create_image()
