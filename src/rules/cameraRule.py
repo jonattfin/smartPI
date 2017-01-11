@@ -2,6 +2,7 @@ from picamera import PiCamera
 from time import sleep
 from datetime import datetime
 import distutils.dir_util
+import os
 
 from .rule import Rule
 
