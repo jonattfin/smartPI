@@ -29,7 +29,7 @@ def main():
 
     # add the rules
     rule_engine = RuleEngine()
-    rule_engine.add_many([psutil_rule, temp_rule, humidity_rule, luminosity_rule, motion_rule, camera_rule])
+    rule_engine.add_many([psutil_rule, temp_rule, humidity_rule, luminosity_rule, motion_rule, camera_rule, mq135_rule])
 
     # fire up the engine
     rule_engine.execute()
