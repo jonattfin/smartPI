@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ro"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title> Kit Senzori Raspberry PI - BASIC</title>
+<!-- base href="https://www.robofun.ro/" -->
+
+
+<meta name="description" content=" Kit Senzori Raspberry PI - BASIC">
+
+<link href="https://www.robofun.ro/image/data/favicon.png" rel="icon">
+
+
+<link href="http://www.robofun.ro/Kit-RASPBERRY-PI-B-pentru-incepatori" rel="canonical">
+
+<link rel="stylesheet" type="text/css" href="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stylesheet.css">
+
+
+
+<!--
+<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+-->
+<link rel="stylesheet" href="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/jquery-ui.css">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/thickbox.css"><style>@media print {#ghostery-purple-box {display:none !important}}</style>
+<link rel="stylesheet" type="text/css" href="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/colorbox.css" media="screen">
+
+
+
+<!--
+<script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+-->
+<script async="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/analytics.js"></script><script src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/jquery.js"></script>
+
+
+
+<!--
+<script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+-->
+<script src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/jquery-ui.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/common.js"></script>
+
+
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/thickbox-compressed.js"></script>
+
+
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/tabs.js"></script>
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/jquery_003.js"></script>
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/jquery_002.js"></script>
+<!--[if IE 7]> 
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie7.css" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/ie6.css" />
+<script type="text/javascript" src="catalog/view/javascript/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('#logo img');
+</script>
+<![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16743936-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+window.Movie = {  
+  path : "https://" + document.domain + "/movie.php"  
+};
+
+window.NewsletterSubscription = {  
+  script_path : "http://" + document.domain + "/subscribe.html"  
+};
+
+(function ($, document, undefined) {
+
+	var pluses = /\+/g;
+
+	function raw(s) {
+		return s;
+	}
+
+	function decoded(s) {
+		return decodeURIComponent(s.replace(pluses, ' '));
+	}
+
+	var config = $.cookie = function (key, value, options) {
+
+		// write
+		if (value !== undefined) {
+			options = $.extend({}, config.defaults, options);
+
+			if (value === null) {
+				options.expires = -1;
+			}
+
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setDate(t.getDate() + days);
+			}
+
+			value = config.json ? JSON.stringify(value) : String(value);
+
+			return (document.cookie = [
+				encodeURIComponent(key), '=', config.raw ? value : encodeURIComponent(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
+
+		// read
+		var decode = config.raw ? raw : decoded;
+		var cookies = document.cookie.split('; ');
+		for (var i = 0, parts; (parts = cookies[i] && cookies[i].split('=')); i++) {
+			if (decode(parts.shift()) === key) {
+				var cookie = decode(parts.join('='));
+				return config.json ? JSON.parse(cookie) : cookie;
+			}
+		}
+
+		return null;
+	};
+
+	config.defaults = {};
+
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) !== null) {
+			$.cookie(key, null, options);
+			return true;
+		}
+		return false;
+	};
+
+})(jQuery, document);
+
+function showVimeo(id){
+      var height = $(window).height();
+      var width = $(window).width();
+      tb_show("MOVIE",Movie.path+"?height="+height*0.95+"&width="+width*0.8+"&id=" + id,null);
+}
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/light-bottom.css"></head>
+<body><div class="cc_banner-wrapper "><div class="cc_banner cc_container cc_container--open"><a href="#null" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all">OK</a><p class="cc_message">Acest site utilizeaza cookie-uri. Navigand in continuare, va exprimati acordul asupra acestui lucru. <a data-cc-if="options.link" target="_self" class="cc_more_info" href="http://www.robofun.ro/index.php?_route_=cookies">Mai multe informatii</a></p><a class="cc_logo" target="_blank" href="http://silktide.com/cookieconsent">Cookie Consent plugin for the EU cookie law</a></div></div>
+<div id="container">
+<div id="header">
+    <div id="logo"><a href="https://www.robofun.ro/index.php?route=common/home"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/logorobofun11.jpg" title="Robofun" alt="Robofun"></a></div>
+        <div id="cart">
+  <div class="heading">
+    <h4>Cos</h4>
+    <a><span id="cart-total">0 produs(e) - 0 RON</span></a></div>
+  <div class="content">
+        <div class="empty">Cosul este gol!</div>
+      </div>
+</div>
+  <div id="search">
+    <div class="button-search"></div>
+    <input name="search" placeholder="Scrie aici ce cauti si apasa enter" type="text">
+  </div>
+  <div id="welcome">
+        Bine ai venit, <a href="https://www.robofun.ro/index.php?route=account/login">login</a> sau <a href="https://www.robofun.ro/index.php?route=account/register">creare cont</a>.      </div>
+  <div class="links"><a href="https://www.robofun.ro/index.php?route=common/home">Home</a><a href="https://www.robofun.ro/index.php?route=account/wishlist" id="wishlist-total">Wish List (0)</a><a href="https://www.robofun.ro/index.php?route=account/account">Cont</a><a href="https://www.robofun.ro/index.php?route=checkout/cart">Cos cumparaturi</a><a href="https://www.robofun.ro/index.php?route=checkout/cart">Trimite Comanda</a></div>
+</div>
+<div id="notification">
+
+
+</div>
+
+
+
+
+<div id="column-left">
+    
+<div class="box">
+  <div class="box-heading">Categorii</div>
+  <div class="box-content">
+    <ul class="box-category">
+
+ 
+<li>
+<a href="https://www.robofun.ro/index.php?route=affiliate/login">Cele mai noi</a>
+</li>
+
+        
+
+     <li>
+                <a href="https://www.robofun.ro/arduino">Arduino</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/raspberry-pi-si-componente" class="active">Raspberry PI</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/raspberry-pi-si-componente/audio"> - Audio</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/raspberry-pi-si-componente/raspberry-cabluri"> - Cabluri</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/raspberry-pi-si-componente/camera"> - Camera</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/raspberry-pi-si-componente/raspberry-cutii"> - Cutii</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/raspberry-pi-si-componente/raspberry-pi-lcd"> - LCD</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/imprimante-3d">Imprimante 3D</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/filament-premium-robofun-abs-175"> - Filament Premium Robofun ABS 1.75 mm</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/filament-premium-robofun-abs-3mm"> - Filament Premium Robofun ABS 3 mm</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/filament-premium-robofun-pla-175"> - Filament Premium Robofun PLA 1.75 mm</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/filament-premium-robofun-pla-3mm"> - Filament Premium Robofun PLA 3 mm</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/filamente-speciale"> - Filamente Speciale</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/prusa-i3-diy"> - Prusa I3 DIY Kit</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/imprimante-3d/componente-imprimante-3d"> - Componente</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/bricks">Pentru Incepatori</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/make">Robofun Make</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/make/mecanice-make"> - Mecanice</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/platforme">Platforme de dezvoltare</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/net"> - .NET</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/android"> - Android</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/arduino_dev"> - Arduino</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/arm"> - ARM</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/avr"> - AVR</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/beagle"> - Beagle</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/chumby"> - Chumby</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/espruino"> - Espruino</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/feather"> - Feather</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/flora"> - Flora</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/fpga"> - FPGA</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/intel-edison"> - Intel Edison</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/latte-panda"> - Latte Panda</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/lilypad"> - LilyPad</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/olinuxino"> - Olinuxino</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/pcduino"> - PCDuino</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/photon"> - Photon</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/pic"> - PIC</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/python"> - Python</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/RASPBERRY"> - Raspberry</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/platforme/ti"> - TI</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/promotii"> Promotii</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/carti">Carti</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/kit-roboti">Kit Roboti</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/shields">Shield</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/senzori">Senzori</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/accelerometru"> - Accelerometru</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/biometric"> - Biometric</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/curent"> - Curent</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/forta"> - Forta</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/giroscop"> - Giroscop</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/id"> - ID</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/imu"> - IMU</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/infrarosu"> - Infrarosu</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/laser"> - Laser</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/lichide"> - Lichide</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/lumina"> - Lumina</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/magnetic"> - Magnetic</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/pir"> - PIR</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/sonar"> - Sonar</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/sunet"> - Sunet</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/senzori-temperatura"> - Termocuple</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/video"> - Video</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/senzori/vreme"> - Vreme</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/mecanice">Mecanice</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/3d-printer-cnc"> - 3D Printer &amp; CNC</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/actuator"> - Actuator</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/driver"> - Driver</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/mecanice-encoder"> - Encoder</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/motoare"> - Motoare</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/roti_senile"> - Roti si Senile</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/rulmenti"> - Rulmenti</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/sasiu"> - Sasiu</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/servo"> - Servomotoare</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/suruburi-piulite-conectare"> - Suruburi, Piulite, Conectare</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/mecanice/mecanice-altele"> - Altele</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/gps">GPS</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/lcd">LCD</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/wireless">Wireless</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-2-4"> - 2.4Ghz</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-433"> - 433Mhz</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-antene-cabluri"> - Antene si Cabluri</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-gsm"> - GSM</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-wifi"> - Wifi</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-xbee"> - Xbee</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/wireless/wireless-bluetooth"> - Bluetooth</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/surse_de_alimentare">Surse de alimentare</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/acumulatori"> - Acumulatori</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/alimentatoare"> - Alimentatoare</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/baterii"> - Baterii</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/incarcator"> - Incarcator</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/regulator_step_down"> - Regulator Step-Down</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/regulator_step_down_up"> - Regulator Step-Down Step-Up</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/regulator_step_up"> - Regulator Step-Up</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/solar"> - Solar</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/surse_de_alimentare/altele"> - Altele</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/electronice">Componente</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/butoane"> - Butoane, Tastaturi</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/condensatoare"> - Condensatoare</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/generale"> - Generale</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/led"> - LED</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/microcontrollere_avr"> - Microcontrollere AVR</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/pcb"> - PCB - Placute Circuit</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/electronice/rezistoare"> - Rezistoare</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/index.php?route=product/category&amp;path=216">Drona</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/etextil">E-Textil</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/module">Module</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-audio"> - Audio</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-datalogger"> - Datalogger</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-radio"> - Radio</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-releu"> - Releu</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-rs232"> - RS-232</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-rs-485"> - RS-485</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/module/module-rtc"> - RTC</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/reduceri">Reduceri</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/sticker">Sticker</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/telecomenzi">Telecomenzi</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/accesorii">Accesorii</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/accesorii/accesorii-antene"> - Antene</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/accesorii/accesorii-breadboard"> - Breadboard</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/accesorii/accesorii-cabluri"> - Cabluri</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/accesorii/accesorii-conectori"> - Conectori</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/accesorii/accesorii-cutii"> - Cutii</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/instrumente">Unelte si Instrumente</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/instrumente/proxxon"> - Proxxon</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/cadouri-geeks">Cadouri</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/junior-robotics">Junior Robotics</a>
+                        <ul>
+                    <li>
+                        <a href="https://www.robofun.ro/junior-robotics/Robofish"> -   Robofish</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/junior-robotics/junior_carti"> - Carti</a>
+                      </li>
+                    <li>
+                        <a href="https://www.robofun.ro/junior-robotics/fischertechnik"> - Fischertechnik</a>
+                      </li>
+                  </ul>
+              </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/kit-fun">Kit Fun</a>
+                      </li>
+        
+
+     <li>
+                <a href="https://www.robofun.ro/retrase">Retrase</a>
+                      </li>
+          </ul>
+  </div>
+</div>
+    
+
+<div class="box">
+  <div class="box-heading">Cele mai noi</div>
+  <div class="box-content">
+    <div class="box-product" style="overflow:hidden;text-align:center;margin-left:0px;">
+      
+
+
+      <div style="width:155px;"> 
+                <div class="image"><a href="https://www.robofun.ro/carcasa-metalica-121mm-171mm-55mm-IP65"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/c1-130x130.jpg" alt="Carcasa metalica 121mm 171mm 55mm IP65"></a></div>
+                <div class="name"><a href="https://www.robofun.ro/carcasa-metalica-121mm-171mm-55mm-IP65">Carcasa metalica 121mm 171mm 55mm IP65</a></div>
+                <div class="price">
+                    119 RON                  </div>
+                      </div>
+
+
+      
+
+
+      <div style="width:155px;"> 
+                <div class="image"><a href="https://www.robofun.ro/ubertooth-one-bluetooth"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/ubertooth-one-bluetooth-130x130.jpg" alt="Ubertooth One Bluetooth"></a></div>
+                <div class="name"><a href="https://www.robofun.ro/ubertooth-one-bluetooth">Ubertooth One Bluetooth</a></div>
+                <div class="price">
+                    799 RON                  </div>
+                      </div>
+
+
+      
+
+
+      <div style="width:155px;"> 
+                <div class="image"><a href="https://www.robofun.ro/set-cabluri-arduino-jst"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/set-cabluri-arduino-130x130.jpg" alt="Set cabluri Arduino JST"></a></div>
+                <div class="name"><a href="https://www.robofun.ro/set-cabluri-arduino-jst">Set cabluri Arduino JST</a></div>
+                <div class="price">
+                    36 RON                  </div>
+                      </div>
+
+
+      
+
+
+      <div style="width:155px;"> 
+                <div class="image"><a href="https://www.robofun.ro/sursa-alimentare-12v-21A"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/sursa-alimentare-12v-21a-130x130.jpg" alt="Sursa 12V - 21A"></a></div>
+                <div class="name"><a href="https://www.robofun.ro/sursa-alimentare-12v-21A">Sursa 12V - 21A</a></div>
+                <div class="price">
+                    449 RON                  </div>
+                      </div>
+
+
+      
+
+
+      <div style="width:155px;"> 
+                <div class="image"><a href="https://www.robofun.ro/espruino-pico"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/espruino-pico-130x130.jpg" alt="Espruino Pico"></a></div>
+                <div class="name"><a href="https://www.robofun.ro/espruino-pico">Espruino Pico</a></div>
+                <div class="price">
+                    229 RON                  </div>
+                      </div>
+
+
+          </div>
+
+
+
+
+
+<div style="text-align:center;width:100%;margin:0px;">
+<a href="http://www.robofun.ro/index.php?route=affiliate/login">Vezi toate produsele noi</a>
+</div>
+
+
+
+  </div>
+
+
+</div>  </div>
+ 
+<div id="column-right">
+
+
+
+
+    <div id="banner0" class="banner">
+      <div style="display: block;"><a href="https://www.robofun.ro/www.robofun.ro/curs"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/banner_curs-180x200.png" alt="Curs" title="Curs"></a></div>
+    </div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#banner0 div:first-child').css('display', 'block');
+});
+
+var banner = function() {
+	$('#banner0').cycle({
+		before: function(current, next) {
+			$(next).parent().height($(next).outerHeight());
+		}
+	});
+}
+
+setTimeout(banner, 2000);
+//--></script><br>
+   
+ <div id="banner_div" style="display:none;width:190px;border:1px solid #CCC;padding:10px;padding-bottom:18px;padding-top:18px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin-bottom:15px;padding-bottom:20px;background-color:white;text-align:left">
+
+</div>
+
+    
+    <div id="banner1" class="banner">
+      <div style="display: block;"><a href="http://www.robofun.ro/index.php?route=information/contact"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/telefon3-180x156-180x156-180x156.png" alt="Telefon" title="Telefon"></a></div>
+    </div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#banner1 div:first-child').css('display', 'block');
+});
+
+var banner = function() {
+	$('#banner1').cycle({
+		before: function(current, next) {
+			$(next).parent().height($(next).outerHeight());
+		}
+	});
+}
+
+setTimeout(banner, 2000);
+//--></script><br>
+   
+    
+    <div id="banner2" class="banner">
+      <div style="display: block;"><a href="http://www.robofun.ro/index.php?_route_=livrare"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/2_gratuit_banner_livrare-180x180-180x200.jpg" alt="FreeShipping" title="FreeShipping"></a></div>
+    </div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#banner2 div:first-child').css('display', 'block');
+});
+
+var banner = function() {
+	$('#banner2').cycle({
+		before: function(current, next) {
+			$(next).parent().height($(next).outerHeight());
+		}
+	});
+}
+
+setTimeout(banner, 2000);
+//--></script><br>
+   
+    
+    <div id="banner3" class="banner">
+      <div style="display: block;"><a href="http://www.robofun.ro/helpdesk/open.php#cerere-oferta"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/banner_furnizori_32-180x278.jpg" alt="ComandaDirect" title="ComandaDirect"></a></div>
+    </div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#banner3 div:first-child').css('display', 'block');
+});
+
+var banner = function() {
+	$('#banner3').cycle({
+		before: function(current, next) {
+			$(next).parent().height($(next).outerHeight());
+		}
+	});
+}
+
+setTimeout(banner, 2000);
+//--></script><br>
+   
+
+<div style="width:190px;border:1px solid #CCC;padding:10px;padding-bottom:18px;padding-top:18px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin-bottom:15px;padding-bottom:20px;background-color:white;text-align:left">
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/open.php#cerere-oferta" target="_blank">Comanda Direct Furnizor</a>
+<div style="padding-bottom:4px;"></div>
+
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/open.php#consultanta-tehnica" target="_blank">Consultanta Tehnica</a>
+<div style="padding-bottom:4px;"></div>
+
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/open.php#garantie-produse" target="_blank">Ticket Garantie</a>
+<div style="padding-bottom:4px;"></div>
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/open.php#problema-livrare" target="_blank">Problema Livrare</a>
+<div style="padding-bottom:4px;"></div>
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/open.php#retur-produse" target="_blank">Retur Produse</a>
+<div style="padding-bottom:4px;"></div>
+
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/open.php#feedback" target="_blank">Feedback</a>
+<div style="padding-bottom:4px;"></div>
+
+
+<img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/bullet_2.png" alt="">
+&nbsp;&nbsp;&nbsp;<a href="http://robofun.ro/helpdesk/view.php" target="_blank">Verifica Status</a>
+<div style="padding-bottom:4px;"></div>
+
+</div>
+
+   
+    
+    <div id="banner4" class="banner">
+      <div style="display: block;"><a href="http://www.robofun.ro/forum"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/forum_question-180x212.jpg" alt="Forum" title="Forum"></a></div>
+    </div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('#banner4 div:first-child').css('display', 'block');
+});
+
+var banner = function() {
+	$('#banner4').cycle({
+		before: function(current, next) {
+			$(next).parent().height($(next).outerHeight());
+		}
+	});
+}
+
+setTimeout(banner, 2000);
+//--></script><br>
+   
+    
+  
+
+
+</div>
+<div id="content">  <div class="breadcrumb">
+        <a href="http://www.robofun.ro/index.php?route=common/home">Acasa</a>
+         » <a href="http://www.robofun.ro/raspberry-pi-si-componente">Raspberry PI</a>
+         » <a href="http://www.robofun.ro/raspberry-pi-si-componente/Kit-RASPBERRY-PI-B-pentru-incepatori"> Kit Senzori Raspberry PI - BASIC</a>
+      </div>
+  <h1> Kit Senzori Raspberry PI - BASIC</h1>
+  <div class="product-info" style="overflow:hidden;margin-bottom:0px">
+        <div class="left">
+      
+
+
+      <div class="image" style="margin-bottom:0px;"><a href="https://www.robofun.ro/image/cache/data/Kit-Senzori-Pi-Basic1-500x500.jpg" title=" Kit Senzori Raspberry PI - BASIC" class="colorbox cboxElement"><img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/Kit-Senzori-Pi-Basic1-228x228.jpg" title=" Kit Senzori Raspberry PI - BASIC" alt=" Kit Senzori Raspberry PI - BASIC" id="image" style="margin-bottom:0px"></a></div>
+                </div>
+        <div class="right">
+      <div class="description">
+                <span>Cod Produs:</span> RAS-02  <span style="color:#FFF">  258</span> <br>
+        
+<div id="stoc_div" style="">
+
+<span>Stoc :</span>60 buc
+
+
+
+
+
+
+</div>
+
+</div>
+            <div class="price">Pret:                141 RON         <span style="font-size:13px;font-weight:normal">(TVA inclus)</span>
+        <br>
+                              </div>
+                        <div class="cart" style="margin-bottom:0px; ">
+        <div>Cantitate:          <input name="quantity" size="2" value="1" type="text">
+          <input name="product_id" size="2" value="692" type="hidden">
+          &nbsp;
+          
+
+<input value="Adauga in cos" id="button-cart" class="button" style="font-size:15px;" type="button">
+          
+
+        </div>
+
+
+
+              </div>
+
+          <div class="links" style="margin-top:10px;">
+
+<div>
+<a onclick="addToWishList('692');">Adauga la Wish List</a>
+</div>
+
+<div style="margin-top:4px;">
+<a onclick="$('a[href=\'#tab-review\']').trigger('click');window.scrollTo(0,600);">Scrie o intrebare / review</a>
+</div>
+
+            </div>
+<div>
+
+
+
+
+</div>
+
+
+
+
+
+   </div>
+
+
+  </div>
+
+
+
+
+
+<table>
+<tbody><tr>
+<td>
+
+<a href="https://www.robofun.ro/index.php?route=account/return/insert">
+<img style="border:none;" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/retur-30-zile-1.png" alt="" title="Daca nu este ceea ce ai nevoie, poti returna acest produs in termen de 30 de zile de la achizitie. Produsul va trebui sa fie in aceeasi stare in care l-ai primit de la noi. Click pentru detaliile complete.">
+</a>
+
+
+
+</td>
+
+<td>
+
+<a href="https://www.robofun.ro/index.php?_route_=livrare">
+<img style="border:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/livrare-gratuita-1.png" title="Pentru acest produs ai livrare gratuita prin Fan Courier  (orice comanda mai mare de 100 de RON are transportul platit de noi). Click pentru detalii.">
+</a>
+
+
+
+
+
+</td>
+
+</tr>
+
+</tbody></table>
+
+
+
+  <div id="tabs" class="htabs">
+
+   <a href="#tab-description" style="display: inline;" class="selected">Descrierea produsului</a>
+
+            <a href="#tab-review" style="display: inline;">Discutii / Reviews (15)</a>
+        
+
+
+  </div>
+
+
+
+<div id="tab-description" class="tab-content" style="border: medium none; overflow: visible; text-align: justify ! important; font-size: 14px; display: block;">
+
+<p>Kit-ul Senzori Raspberry PI - BASIC contine o serie de senzori 
+analogici care iti permit extinderea capabilitatilor placii Raspbery PI.
+ Acest kit contine un <a href="https://www.robofun.ro/sensor-brick-pentru-raspberry-pi?search=sensor%20shield" target="_blank">Sensor Shield V4 pentru Raspberry Pi</a> (care iti deschide posibilitatea de a interfata Raspberry PI cu toti sensorii analogici), un <a href="https://www.robofun.ro/senzor-temperatura-brick">senzor de temperatura brick</a>, un <a href="https://www.robofun.ro/senzor-umiditate-brick">senzor de umiditate brick</a>, un <a href="https://www.robofun.ro/senzor-lumina">senzor de lumina brick</a>, un <a href="https://www.robofun.ro/bricks/buton-mare-brick">buton mare brick</a>, un <a href="https://www.robofun.ro/bricks/led-brick-rosu">led brick rosu</a>, un <a href="https://www.robofun.ro/bricks/led-brick-verde">led brick verde</a>, un <a href="https://www.robofun.ro/bricks/led-brick-galben">led brick galben</a>&nbsp;si un <a href="https://www.robofun.ro/bricks/led-brick-albastru">led brick albastru</a>. In plus, mai ai incluse un <a href="https://www.robofun.ro/cabluri-conectare-mama-tata-20-bucati?search=mama%20tata" target="_blank">set de cabluri mama-tata</a>&nbsp;pentru a conecta senzorii brick la SensorShield.</p>
+
+<p>&nbsp;</p>
+
+<p style="text-align: center; "><span style="text-align: center; ">Acest kit nu contine placa&nbsp;</span><a href="https://www.robofun.ro/raspberry-pi-v2?search=raspberry%20pi" target="_blank">Raspberry PI<span style="text-align: center; ">. </span></a></p>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<p style="text-align: center; "><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/Kit-Senzori-Pi-Basic1.jpg" style="width: 500px; height: 331px;"></p>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<p style="text-align: center; ">Raspberry PI Model B+</p>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<p style="text-align: center; "><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/kit-senzori-pi.jpg" style="width: 500px; height: 500px;"></p>
+
+<center>
+<p><span style="line-height: 1.6em;">Conectarea shield-ului la platforma Raspberry Pi se face dupa diagrama de mai jos.</span></p>
+
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/sensorbrick-schema2.jpeg" style="width: 500px; height: 422px;"></p>
+
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/pini%2520gpio.jpg" style="width: 500px; height: 519px;"></p>
+
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/gpio-numbers-pi2.png" style="width: 500px; height: 149px;"></p>
+</center>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<p><strong><span style="font-size: 16px; ">Cum se conecteaza un sensor analogic la SensorShield</span></strong></p>
+
+<p>&nbsp;</p>
+
+<p style="text-align: start; ">Un senzor analogic se conecteaza folosind&nbsp;<a href="https://www.robofun.ro/raspberry-pi-v2?search=raspberry%20pi" target="_blank">3 fire</a>,
+ un fir la alimentare (5 V sau 3.3 V, in functie de tipul de senzor), un
+ fir la GND, si un fir la o intrare de senzor de pe SensorShield. Poti 
+folosi simultan pana la 8 senzori analogici in acest mod. Mai jos sunt 
+cateva exemple care demonstreaza modul de conexiune.</p>
+
+<p>&nbsp;</p>
+
+<center>
+<p><strong><span style="font-size: 16px; ">Senzor de lumina brick + Raspberry PI</span></strong></p>
+</center>
+
+<p>&nbsp;</p>
+
+<center>
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/SenzorLumina.jpg" style="width: 500px; height: 338px;"></p>
+</center>
+
+<p>&nbsp;</p>
+
+<p>pinul&nbsp;<strong>VCC senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong> 5 V al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>GND senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>OUT senzor &nbsp;</strong>se conecteaza la &nbsp;o <strong>intrare de senzor de pe Sensor Shield</strong></p>
+
+<p style="text-align: start; ">&nbsp;</p>
+
+<p><span style="text-align: -webkit-auto; ">Codul sursa folosit pentru toti senzorii analogici este acelasi, si il vei gasi la sfarsitul acestui articol.</span></p>
+
+<p style="text-align: start; ">&nbsp;</p>
+
+<p style="text-align: start; ">&nbsp;</p>
+
+<center>
+<p><strong><span style="font-size: 16px; ">Senzor de umiditate brick + Raspberry PI</span></strong></p>
+</center>
+
+<center>
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/Senzor-Umiditate1.jpg" style="width: 500px; height: 338px;"></p>
+</center>
+
+<p>&nbsp;</p>
+
+<p>pinul&nbsp;<strong>VCC senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong> 5 V al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>GND senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>OUT senzor &nbsp;</strong>se conecteaza la &nbsp;o <strong>intrare de senzor de pe Sensor Shield</strong></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<center>
+<p><strong><span style="font-size: 16px; ">Senzor de temperatura brick&nbsp;+ Raspberry PI</span></strong></p>
+</center>
+
+<center>
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/Senzor-Temper.jpg" style="width: 500px; height: 297px;"></p>
+</center>
+
+<div>&nbsp;</div>
+
+<div>
+<p>pinul&nbsp;<strong>VCC senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong> 5 V al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>GND senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>OUT senzor &nbsp;</strong>se conecteaza la &nbsp;o <strong>intrare de senzor de pe Sensor Shield</strong></p>
+
+<p>&nbsp;</p>
+
+<p><span style="text-align: start; ">Codul sursa este un pic diferit 
+fata de cel clasic de la finalul paginii, pentru ca include si formula 
+de transformare in Celsius.</span></p>
+
+<p>&nbsp;</p>
+
+<pre>import spidev
+import time
+spi = spidev.SpiDev()
+spi.open(0,0)
+
+def readadc(adcnum):
+    if ((adcnum &gt; 7) or (adcnum &lt; 0)):
+        return -1
+    r = spi.xfer2([1,(8+adcnum)&lt;&lt;4,0])
+    adcout = ((r[1]&amp;3) &lt;&lt; 8) + r[2]
+    return adcout
+
+while True:
+    for adcInput in range(0,8):
+        value = readadc(adcInput)
+        voltage = value * 3.3
+        voltage /= 1024.0
+        tempCelsius = (voltage-0.5)*100
+        print "---------------------------"
+        print "ADC(", adcInput,")= ", value
+        print "---------------------------"
+        print "Voltage: ", voltage
+        print "---------------------------"
+        print "Temp: ", tempCelsius
+    time.sleep(1)
+</pre>
+
+<p>&nbsp;</p>
+
+<center>
+<p><strong><span style="font-size: 16px; ">Buton brick&nbsp;+ Raspberry PI</span></strong></p>
+</center>
+
+<center>
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/Brick-Buton.jpg" style="width: 500px; height: 313px;"></p>
+</center>
+
+<p>&nbsp;</p>
+
+<p>pinul&nbsp;<strong>VCC senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong> 5 V al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>GND senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>OUT senzor &nbsp;</strong>se conecteaza la &nbsp;o <strong>intrare de senzor de pe Sensor Shield</strong></p>
+
+<div>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+
+<center>
+<div><strong><span style="font-size: 16px; ">Senzor de distanta Sharp&nbsp;&nbsp;+ Raspberry PI</span></strong></div>
+</center>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<center>
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/sharp.jpg" style="width: 489px; height: 365px;"></div>
+</center>
+
+<div>
+<p>&nbsp;</p>
+
+<p>pinul&nbsp;<strong>VCC senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong> 5 V al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>GND senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>OUT senzor &nbsp;</strong>se conecteaza la &nbsp;o <strong>intrare de senzor de pe Sensor Shield</strong></p>
+
+<p>&nbsp;</p>
+
+<p><span style="text-align: start; ">Codul sursa folosit &nbsp;il vei gasi la sfarsitul acestui articol. Vei obtine o valoare citita in P</span><span style="text-align: start; ">h</span><span style="text-align: start; ">yton
+ care se modifica cu distanta pana la primul obiect din fata senzorului.
+ Daca vrei ca in plus modificarea valorii sa fie liniara cu distanta, 
+atunci va trebui sa aplici&nbsp;<a href="http://home.roboticlab.eu/en/examples/sensor/ir_distance">formula matematica de liniarizare pentru acest senzor</a>&nbsp;(in codul Phyton).</span></p>
+
+<p><strong>Acest senzor nu este inclus in Kit-ul Basic.</strong></p>
+
+<p>&nbsp;</p>
+
+<center>
+<div><strong><span style="font-size: 16px; ">Senzor apasare brick &nbsp;+ Raspberry PI</span></strong></div>
+
+<div><a href="https://www.robofun.ro/image/data/produse/00000/apasare-mediu-500x500.jpg"><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/apasare-mediu-500x500.jpg" width="500" height="500"></a></div>
+</center>
+
+<div>
+<p>pinul&nbsp;<strong>VCC senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong> 5 V al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>GND senzor &nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multi senzori)</p>
+
+<p>pinul&nbsp;<strong>OUT senzor &nbsp;</strong>se conecteaza la &nbsp;o <strong>intrare de senzor de pe Sensor Shield</strong></p>
+
+<p>&nbsp;</p>
+
+<p><span style="text-align: start; ">Codul sursa folosit &nbsp;il vei gasi la sfarsitul acestui articol. Vei obtine o valoare citita in P</span><span style="text-align: start; ">h</span><span style="text-align: start; ">yton care se modifica cu nivelul de apasare.</span></p>
+
+<p><strong>Acest senzor nu este inclus in Kit-ul Basic.</strong></p>
+
+<p style="text-align: center; ">&nbsp;</p>
+
+<center>
+<div><strong><span style="font-size: 16px; ">Led-uri brick &nbsp;+ Raspberry PI</span></strong></div>
+
+<div>&nbsp;</div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/3%2520LED-uri.jpg" style="width: 500px; height: 320px;"></div>
+</center>
+
+<div>pinul&nbsp;<strong>IN led albastru&nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<b>GPIO 4 Raspberry PI</b></div>
+
+<div>
+<p>pinul&nbsp;<strong>IN led galben&nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<b>GPIO 17 Raspberry PI</b></p>
+
+<p>pinul&nbsp;<strong>IN led verde&nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<b>GPIO 21 Raspberry PI</b></p>
+
+<p>pinul&nbsp;<strong>GND led albastru</strong><strong>&nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multe LED-uri)</p>
+
+<p>pinul&nbsp;<strong>GND led galben</strong><strong>&nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multe LED-uri)</p>
+
+<p>pinul&nbsp;<strong>GND led verde</strong><strong>&nbsp;</strong>se conecteaza la &nbsp;pinul&nbsp;<strong>GND al placii Rapberry Pi </strong>(sau printr-un breadboard daca se folosesc mai multe LED-uri)</p>
+
+<p>&nbsp;</p>
+</div>
+
+<p>&nbsp;</p>
+
+<p><span style="text-align: start; ">Atentie, pinii IN ai led-urilor se 
+conecteaza direct in mufa de pe Raspberry PI, si NU in pinii de pe 
+SensorShield. Cel mai simplu pentru a obtine acest lucru este a 
+folosesti <a href="https://www.robofun.ro/cabluri-conectare-mama-tata-20-bucati?search=mama%20tata" target="_blank">mama-tata.</a>
+ Codul sursa folosit pentru cele trei led-uri este mai jos. Diagrama 
+pinilor de pe placa Raspberry PI este ceva mai sus in text (daca ai 
+nevoie de ajutor in a identifica pinii).</span></p>
+
+<pre style="text-align: start; ">#!/usr/bin/env python
+import time
+import os
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(4, GPIO.OUT)
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(21, GPIO.OUT)
+
+
+while True:
+        GPIO.output(4, True)
+        time.sleep(0.5)
+        GPIO.output(4, False)
+        time.sleep(0.5)
+
+        GPIO.output(17, True)
+        time.sleep(0.5)
+        GPIO.output(17, False)
+        time.sleep(0.5)
+
+        GPIO.output(21, True)
+        time.sleep(0.5)
+        GPIO.output(21, False)
+        time.sleep(0.5)
+
+</pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong><span style="font-size: 16px; ">Codul sursa pentru senzori analogici + Raspberry PI cu SensorShield</span></strong></p>
+
+<p>Codul sursa nu este deloc complicat, dar mai inainte mai sunt cativa 
+pasi de executat pentru a instala mediul de dezvoltare Phyton pe 
+Raspberry PI si extensia pentru porturile GPIO. Ghidul de mai jos este 
+bazat pe release-ul de&nbsp;<a href="http://www.raspberrypi.org/downloads">Raspbian Wheezy</a>, dar nu vad nici un motiv pentru care nu ar merge si cu alte release-uri.&nbsp;</p>
+
+<p>Pasii sunt urmatorii :</p>
+
+<p>&nbsp;</p>
+
+<p><strong>1.&nbsp;</strong><b>Logheaza-te prin SSH la placa si vezi daca modulul portului SPI este vizibil sau nu.</b></p>
+
+<p><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ lsmod</span></em></p>
+
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/lsmod.png" style="width: 564px; height: 359px;"></p>
+
+<p><strong>2. </strong><b>Daca modulul portului SPI nu este vizibil este necesar sa il activati din configurari.</b></p>
+
+<p><em>$ sudo raspi-config</em></p>
+
+<p><em><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/raspi-config.png" style="width: 563px; height: 242px;"></em></p>
+
+<p><strong>3. </strong><b>Pentru activarea modulului SPI este necesar sa urmati instructiunile de mai jos:</b></p>
+
+<p><b><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/config.png" style="width: 565px; height: 358px;"></b></p>
+</div>
+
+<div>
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/config%25202.png" style="width: 567px; height: 364px;"></div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/config%25203.png" style="width: 568px; height: 363px;"></div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/reboot.png" width="567" height="357"></div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/config%25205.png" width="567" height="361"></div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/config%25206.png" width="567" height="361"></div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/config%25207.png" width="567" height="362"></div>
+
+<div><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/reboot%25201.png" width="567" height="359"></div>
+
+<p><strong>4. Dupa reboot verifica daca modulul portului SPI este vizibil.</strong></p>
+
+<div><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ lsmod</span></em></div>
+
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/fin.png" width="566" height="218"></p>
+
+<p><strong>5.&nbsp;</strong><b>Urmeaza sa instalezi pachetul git si pachetul python-dev:</b></p>
+
+<div><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>sudo apt-get install git-core</i></span></font></div>
+
+<div><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>sudo apt-get install python-dev</i></span></font></div>
+</div>
+</div>
+
+<p><strong>6.&nbsp;</strong><b>Acum vei descarca pachetul py-spidev si il vei compila:</b></p>
+
+<div><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>cd /home</i></span></font></div>
+
+<div>&nbsp;</div>
+
+<div>
+<p><strong>7. Verifica versiunea sistemului de operare</strong><b>:</b></p>
+
+<div>
+<div style="font-size: 13px; line-height: 20.7999992370605px;"><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ uname -r</span></em></div>
+
+<div style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</div>
+
+<div><strong style="line-height: 20.7999992370605px;">Daca output-ul este mai mare de 3.15 atunci executa comanda de mai jos</strong><b style="line-height: 20.7999992370605px;">:</b></div>
+
+<div style="font-size: 13px; line-height: 20.7999992370605px;">
+<p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+
+<p style="font-size: 13px; line-height: 20.7999992370605px;"><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>sudo git clone git://github.com/Gadgetoid/py-spidev</i></span></font></p>
+</div>
+</div>
+</div>
+
+<div>&nbsp;</div>
+
+<div>
+<div><b>In caz contrar executa comanda:</b></div>
+
+<div style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</div>
+</div>
+
+<div><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>sudo git clone git://github.com/doceme/py-spidev</i></span></font></div>
+
+<div>&nbsp;</div>
+
+<div>
+<p><strong>8. Instaleaza pachetul py-spidev</strong><b>:</b></p>
+
+<p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+</div>
+
+<p><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>cd py-spidev/</i></span></font></p>
+
+<p><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>sudo python setup.py install</i></span></font></p>
+
+<p>&nbsp;</p>
+
+<p><strong>9. </strong>Creaza un fisier numit <strong>analog.py</strong> si copiaza codul de mai jos cu copy paste.</p>
+
+<p><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; white-space: pre-wrap; background-color: rgb(247, 247, 249);">$ </span></em><font color="#48484c" face="Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-size: 14px; line-height: 18px; white-space: pre-wrap;"><i>nano ./analog.py</i></span></font></p>
+
+<p>&nbsp;</p>
+
+<div>
+<div>
+<pre>import spidev
+import time
+spi = spidev.SpiDev()
+spi.open(0,0)
+
+def readadc(adcnum):
+    if ((adcnum &gt; 7) or (adcnum &lt; 0)):
+        return -1
+    r = spi.xfer2([1,(8+adcnum)&lt;&lt;4,0])
+    adcout = ((r[1]&amp;3) &lt;&lt; 8) + r[2]
+    return adcout
+
+while True:
+    for adcInput in range(0,8):
+        value = readadc(adcInput)
+        print "---------------------------"
+        print "ADC(", adcInput,")= ", value
+        print "---------------------------"
+    time.sleep(1)
+
+</pre>
+
+<p><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/shield-pi-5.png" width="500" height="299"></p>
+
+<p>&nbsp;</p>
+
+<pre><strong style="font-size: 13px; line-height: 20.7999992370605px;">
+&nbsp;</strong></pre>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;"><strong>10. Ruleaza programul.</strong></strong></p>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;"><em><span class="pln" style="color: rgb(72, 72, 76); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18px; text-align: left; white-space: pre-wrap; background-color: rgb(247, 247, 249); ">$ sudo python analog.py</span></em></strong></p>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;">Vei vedea o serie de valori care se deruleaza. Acestea sunt valorile succesive citite de la senzorul tau analogic.</strong></p>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</strong></p>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;"><img alt="" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/shield-pi-6.png" width="500" height="303"></strong></p>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</strong></p>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</strong></p>
+</div>
+</div>
+
+<p><strong style="font-size: 13px; line-height: 20.7999992370605px;"><a class="butonPagina" href="http://robofun.ro/forum/viewtopic.php?f=22&amp;t=935">Descarca tutorial in format PDF, limba romana</a></strong></p>
+</div>
+
+</div>
+
+      <div id="tab-review" class="tab-content" style="border: medium none; display: none;">
+    <div id="review">
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Andrei</b> - 04/07/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">@Valentin<br>
+<br>
+Senzorul Sharp si senzorul de apasare nu sunt in kit.
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Valentin</b> - 04/07/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">Salut,<br>
+<br>
+In descrierea senzorilor fac parte "Senzor-ul de distanta Sharp" si 
+"Senzor-ul de apasara Brick" desi acestia nu sunt mentionati in lista de
+ continut al pachetului de la inceput. Fac senzorii acestia parte din 
+produs?<br>
+<br>
+Multumesc,<br>
+Valentin
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Viorel [ROBOFUN]</b> - 10/06/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">@Ionut <br>
+<br>
+"3.3" reprezinta referinta de tensiune a SensorShield-ului, nu tensiunea
+ de alimentare a senzorului. Conversia analog digitala se raporteaza la 
+tensiunea la care functioneaza chip-ul de pe SensorShield (care se 
+alimenteaza la 3.3 V). <br>
+<br>
+Viorel
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Ionut</b> - 07/06/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">Salut,<br>
+<br>
+Am si eu o intrebare legata de formula de calcul a temperaturii, si 
+anume linia urmatoare in codul sursa: "voltage = value * 3.3".<br>
+Formula functioneaza, insa nu inteleg de ce este 3.3, cand pinul VCC senzor  se conecteaza la  pinul 5V Sensor Shield.<br>
+<br>
+Multumesc.
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Viorel [ROBOFUN]</b> - 05/04/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">@Ion <br>
+<br>
+Da, fara probleme.
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Ion</b> - 05/04/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">Buna, acest pachet functioneaza si cu raspberry pi 3 model B ?
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Marius</b> - 13/01/2016</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">Buna ziua,<br>
+Aveti acest kit in stoc?<br>
+Multumesc!
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Viorel [ROBOFUN]</b> - 24/11/2015</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">@Andrei<br>
+<br>
+Da, functioneaza perfect si pe Raspberry PI V2. Vezi in pagina produsului "SensorShield" modalitatea de conectare.<br>
+<br>
+Viorel
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Andrei</b> - 23/11/2015</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">Buna ziua,<br>
+<br>
+Acest kit merge si pe Raspberry Pi v2? Daca nu, imi puteti da un link catre un kit similar care sa mearga pe v2?<br>
+<br>
+Multumesc.
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Marian</b> - 13/06/2015</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text">Salut,<br>
+<br>
+Îmi puteți spune care sunt domeniile de măsurare și ce intervale de măsurare au senzorii din acest kit?
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Viorel [ROBOFUN]</b> - 06/12/2014</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text"><br>
+@Nashwan Azhari<br>
+<br>
+Asa este, toate exemplele le-am scris pe vremea cu Raspberry PI B.<br>
+<br>
+Am pus pe lista de TODO sa revizuim toate exemplele din pagina cu Raspberry PI B+, multumim de sugestie.<br>
+<br>
+Viorel 
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Nashwan Azhari</b> - 06/12/2014</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text"><br>
+Salut,<br>
+<br>
+As dori sa precizez faptul ca pentru exemplele voastre de aici (si in 
+alte cateva locuri) folositi presetul de GPIO.BCM pentru librarie si 
+numerotarea pin-urilor de la prima revizie (1.0) a modelului B simplu.<br>
+Asta cauzeaza probleme si confuzie pentru cei cu B 2.0 sau B+.<br>
+<br>
+Dupa mine cea mai buna solutie ar fi sa folosoti preset-ul GPIO.BOARD 
+care urmareste ordinea efectiva a pinilor de pe placa si nu numarul 
+pinului de procesor.<br>
+<br>
+Oricum, foarte de ajutor sample-urile si spor in continuare :D<br>
+<br>
+Toate cele bune, <br>
+         Nashwan.
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Petrisor Serban</b> - 02/12/2014</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text"><br>
+Problema a fost rezolvata schimband shield-ul. Acum totul merge perfect. Multumesc!
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Viorel [ROBOFUN]</b> - 01/12/2014</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text"><br>
+@Petrisor<br>
+<br>
+Ai urmat exact instructiunile din pagina ? Ma gandesc ca poate ai facut gresit, si de acolo si problemele.<br>
+<br>
+As sugera sa mutam discutia pe forum. Posteaza te rog niste poze ca sa 
+vad cum anume ai conectat lucrurile, precum si pasii pe care i-ai urmat,
+ ca sa te pot ajuta.<br>
+<br>
+Viorel
+</div>
+
+
+</div>
+
+<div class="review-list" style="background:#FBFBFB;border:1px solid #CCC">
+
+
+  <div class="author"><b>Petrisor Serban</b> - 01/12/2014</div>
+  <div class="rating"><img style="display:none" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/stars-5.png" alt="15 reviews"></div>
+
+  <div class="text"><br>
+Salut,<br>
+Am o problema cu sensor-shield-ul: am testat in diverse moduri 
+inputurile primite de la diversi senzori (am testat inclusiv cu 
+scripturile de python din aceasta pagina), insa rezultatul este acelasi:
+ primesc numai 1023 pe toti pinii, chiar daca am senzori conectati la 
+ei. Am testat cu voltmetrul, senzorii sunt buni, tensiunea care intra pe
+ pinii controllerului MCP3008 de la A0..7 este corecta . Comanda lsmod |
+ grep spi imi afiseaza spidev si spi_bcm2708, deci modulele de kernel pt
+ spi sunt incarcate.<br>
+Ce e de facut?<br>
+<br>
+Multumesc
+</div>
+
+
+</div>
+<div class="pagination"></div>
+</div>
+    <div style="font-weight:normal;font-size:100%;padding:12px;background:#F4F4F4;border:1px solid #EEE" id="review-title"><div style="text-align:justify;">Scrie un review / pune o intrebare in zona de mai jos. <br><br>Intrebarea
+ / review-ul tau va fi publicata pe site in cel mai scurt timp posibil 
+(pe langa intrebarile scrise de clienti, cu acest formular mai 
+interactioneaza si unii boti si servicii de spam automate care incearca 
+sa ne vanda Viagra, postari pe care este necesar sa le filtram manual :)</div> .<br><br>
+    Numele tau <br>
+    <input style="background:#FFF" name="name" type="text">
+    <br>
+    <br>
+    Adresa ta de email (nu o vom face publica, nu va fi publicata nicaieri pe site) <br>
+    <input style="background:#FFF" name="email" type="text">
+    <br>
+    <br>
+    Intrebarea / review-ul tau
+    <textarea name="text" cols="40" rows="8" style="background:#FFF;width: 98%;"></textarea>
+    <span style="font-size: 11px;"></span><br>
+    <br>
+
+</div>
+
+
+<div style="display:none">
+    <b>Rating:</b> <span>Bad</span>&nbsp;
+    <input name="rating" value="1" type="radio">
+    &nbsp;
+    <input name="rating" value="2" type="radio">
+    &nbsp;
+    <input name="rating" value="3" type="radio">
+    &nbsp;
+    <input name="rating" value="4" type="radio">
+    &nbsp;
+    <input name="rating" value="5" type="radio">
+    &nbsp;<span>Good</span><br>
+    <br>
+</div>
+
+    <br>
+    <div class="buttons">
+      <div class="right"><a id="button-review" class="button">Continua</a></div>
+    </div>
+  </div>
+
+
+<div style="visibility:hidden">
+    <b>Introdu codul in caseta de mai jos:</b><br>
+    <input name="captcha" type="text">
+
+
+    <br>
+    <img src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/index.jpeg" alt="" id="captcha"><br>
+
+</div>
+
+
+
+    
+
+  
+
+
+  </div>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	$('.colorbox').colorbox({
+		overlayClose: true,
+		opacity: 0.5,
+		rel: "colorbox"
+	});
+});
+//--></script> 
+<script type="text/javascript"><!--
+
+
+var stocCookie = parseInt($.cookie("stoc")) + 1;
+if (stocCookie){
+   $("#stoc_div").show();
+}
+
+
+
+$('select[name="profile_id"], input[name="quantity"]').change(function(){
+    $.ajax({
+		url: 'index.php?route=product/product/getRecurringDescription',
+		type: 'post',
+		data: $('input[name="product_id"], input[name="quantity"], select[name="profile_id"]'),
+		dataType: 'json',
+        beforeSend: function() {
+            $('#profile-description').html('');
+        },
+		success: function(json) {
+			$('.success, .warning, .attention, information, .error').remove();
+            
+			if (json['success']) {
+                $('#profile-description').html(json['success']);
+			}	
+		}
+	});
+});
+    
+$('#button-cart').bind('click', function() {
+	$.ajax({
+		url: 'index.php?route=checkout/cart/add',
+		type: 'post',
+		data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
+		dataType: 'json',
+		success: function(json) {
+			$('.success, .warning, .attention, information, .error').remove();
+			
+			if (json['error']) {
+				if (json['error']['option']) {
+					for (i in json['error']['option']) {
+						$('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
+					}
+				}
+                
+                if (json['error']['profile']) {
+                    $('select[name="profile_id"]').after('<span class="error">' + json['error']['profile'] + '</span>');
+                }
+			} 
+			
+			if (json['success']) {
+				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					
+				$('.success').fadeIn('slow');
+					
+				$('#cart-total').html(json['total']);
+				
+				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
+
+setTimeout(function() {
+act_cart_sidebar();
+}, 200);
+
+			}	
+		}
+	});
+});
+//--></script>
+<script type="text/javascript"><!--
+$('#review .pagination a').live('click', function() {
+	$('#review').fadeOut('slow');
+		
+	$('#review').load(this.href);
+	
+	$('#review').fadeIn('slow');
+	
+	return false;
+});			
+
+$('#review').load('index.php?route=product/product/review&product_id=692');
+
+$('#button-review').bind('click', function() {
+
+
+       $('.success, .warning').remove();
+
+       var errorText = "";
+ 
+       if ($('input[name=\'name\']').val().length < 1) {
+           errorText = "Nu ai completat nimic in campul nume. Este OK daca nu vrei sa treci numele tau real, poti trece un nickname.";
+       }
+
+       if ($('input[name=\'email\']').val().length < 3) {
+           if (errorText != "") {
+                 errorText = errorText + "<br><br>";
+           }
+           errorText =  errorText  + "Lasa-ne si o adresa de email te rugam, ca sa putem discuta mai eficient. Nu o vom face publica, nu va aparea nicaieri pe site.";
+       }
+
+
+       if ($('textarea[name=\'text\']').val().length < 3) {
+           if (errorText != "") {
+                 errorText = errorText + "<br><br>";
+           }
+           errorText =  errorText  + "Sigur ne-ai scris ceva ? Campul review este gol.";
+       }
+
+  
+       if (errorText != ""){
+           $('#review-title').after('<div class="warning">' + errorText + '</div>');
+           return;
+       }
+
+
+
+
+	$.ajax({
+		url: 'index.php?route=product/product/write&product_id=692',
+		type: 'post',
+		dataType: 'json',
+		data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('input[name=\'email\']').val() + "---***---\n\n" + $('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent(5) + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
+		beforeSend: function() {
+			$('.success, .warning').remove();
+			$('#button-review').attr('disabled', true);
+			//$('#review-title').after('<div class="attention"><img src="catalog/view/theme/default/image/loading.gif" alt="" /> Va rugam asteptati!</div>');
+		},
+		complete: function() {
+			$('#button-review').attr('disabled', false);
+			$('.attention').remove();
+		},
+		success: function(data) {
+			if (data['error']) {
+				$('#review-title').after('<div class="warning">' + data['error'] + '</div>');
+			}
+			
+			if (data['success']) {
+
+/*
+				$('#review-title').after('<div class="success">' + data['success'] + '</div>');
+								
+				$('input[name=\'name\']').val('');
+				$('textarea[name=\'text\']').val('');
+                                $('input[name=\'email\']').val('');
+                                
+				$('input[name=\'rating\']:checked').attr('checked', '');
+				$('input[name=\'captcha\']').val('');
+*/
+
+                                alert("Iti multumim pentru mesaj, l-am adaugat in pagina produsului. Apasa OK pentru continuare (pagina se va reincarca.");
+                                location.reload();
+			}
+		}
+	});
+});
+//--></script> 
+<script type="text/javascript"><!--
+$('#tabs a').tabs();
+//--></script> 
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/jquery-ui-timepicker-addon.js"></script> 
+<script type="text/javascript"><!--
+$(document).ready(function() {
+	if ($.browser.msie && $.browser.version == 6) {
+		$('.date, .datetime, .time').bgIframe();
+	}
+
+	$('.date').datepicker({dateFormat: 'yy-mm-dd'});
+	$('.datetime').datetimepicker({
+		dateFormat: 'yy-mm-dd',
+		timeFormat: 'h:m'
+	});
+	$('.time').timepicker({timeFormat: 'h:m'});
+});
+//--></script> 
+
+
+
+<!-- Google Code for  Dynamic Remarketing Tag -->
+<script type="text/javascript">
+var google_tag_params={
+dynx_itemid:692,
+dynx_itemid2:692,
+dynx_pagetype:'offerdetails',
+dynx_totalvalue:117.5};
+</script>
+<!-- //Google Code for  Dynamic Remarketing Tag -->
+
+<div id="footer">
+    <div class="column">
+    <h3>Informatii</h3>
+    <ul>
+            <li><a href="https://www.robofun.ro/curs">Curs Gratuit Arduino</a></li>
+            <li><a href="https://www.robofun.ro/despre_noi">Despre noi</a></li>
+            <li><a href="https://www.robofun.ro/livrare">Informatii despre livrare</a></li>
+            <li><a href="https://www.robofun.ro/index.php?route=information/information&amp;information_id=3">Politica de confidentialitate</a></li>
+            <li><a href="https://www.robofun.ro/termeni_si_conditii">Termeni si Conditii</a></li>
+          </ul>
+  </div>
+    <div class="column">
+    <h3>Asistenta client</h3>
+    <ul>
+      <li><a href="https://www.robofun.ro/index.php?route=information/contact">Contact</a></li>
+      <li><a href="https://www.robofun.ro/index.php?route=account/return/insert">Returnari</a></li>
+      <li><a href="https://www.robofun.ro/index.php?route=information/sitemap">Site Map</a></li>
+      <li><a href="http://www.anpc.gov.ro/" target="_blank">ANPC</a></li>
+      <li><a href="https://webgate.ec.europa.eu/odr/main/index.cfm?event=main.home.show&amp;lng=RO" target="_blank">SOL</a></li>
+
+
+    </ul>
+  </div>
+  <div class="column">
+<!--     <h3>Extras</h3> -->
+    <ul>
+<!--      <li><a href="https://www.robofun.ro/index.php?route=account/voucher">Vouchere</a></li>
+
+      <li><a href="http://www.robofun.ro/index.php?route=product/special">Promotii</a></li>
+-->
+    </ul>
+  </div>
+  <div class="column">
+    <h3>Cont</h3>
+    <ul>
+      <li><a href="https://www.robofun.ro/index.php?route=account/account">Cont</a></li>
+      <li><a href="https://www.robofun.ro/index.php?route=account/order">Istoric comenzi</a></li>
+      <li><a href="https://www.robofun.ro/index.php?route=account/wishlist">Wish List</a></li>
+
+    </ul>
+  </div>
+</div>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+<div id="powered"><br>Robofun © 2017</div>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</div>
+<script>
+
+first_time_cart_sidebar = true;
+oldRightHTML = "";
+
+function act_cart_sidebar(){
+try {
+
+if (first_time_cart_sidebar) {
+   oldRightHTML = $("#column-right").html();
+}
+
+first_time_cart_sidebar = false;
+
+
+$.get( "index.php?route=module/cart", function( data ) {
+
+  
+
+  if (data.length < 220){
+    return;
+  } 
+  var html_cos = data.replace('id="cart"', 'id="cart_right"');
+
+
+html= "" + html_cos;
+
+
+var buttons = "<center>"  + "" + "    "+ "<input style='margin-top:7px;margin-bottom:5px;' type='button' class='button' value='Trimite Comanda' onclick='window.location=\"https://www.robofun.ro/index.php?route=checkout/checkout\"'></input><br> <a href='https://www.robofun.ro/index.php?route=checkout/cart'>Modifica cos</a> </center><br>";
+
+html = "<div style='background:#FFF;padding:5px;border:1px solid #CCC; width:180px;'>"+ html + buttons;
+
+
+html=html+"</div>";
+
+if (html_cos){
+
+  $("#column-right").html(html +"<br>" +  oldRightHTML);
+
+}
+
+
+$("#column-right .remove").remove();
+$("#column-right .total").remove();
+$("#column-right .heading").remove();
+$("#column-right .checkout").remove();
+
+
+
+});
+
+
+    
+
+}
+catch(err) {
+
+}
+
+}
+
+act_cart_sidebar();
+
+</script>
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Acest site utilizeaza cookie-uri. Navigand in continuare, va exprimati acordul asupra acestui lucru.","dismiss":"OK","learnMore":"Mai multe informatii","link":"http://www.robofun.ro/index.php?_route_=cookies","theme":"light-bottom"};
+</script>
+
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/cookieconsent.js"></script>
+<!-- End Cookie Consent plugin -->
+
+<!-- Google Code for Remarketing Tag -->
+
+
+<script type="text/javascript">
+
+/* <![CDATA[ */
+
+var google_conversion_id = 1052730604;
+
+var google_custom_params = window.google_tag_params;
+
+var google_remarketing_only = true;
+
+/* ]]> */
+
+</script>
+
+<script type="text/javascript" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/conversion.js">
+
+</script><iframe name="google_conversion_frame" title="Google conversion frame" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1052730604/?random=1483992416349&amp;cv=8&amp;fst=1483992416349&amp;num=1&amp;fmt=1&amp;guid=ON&amp;eid=376635471&amp;u_h=1200&amp;u_w=1920&amp;u_ah=1173&amp;u_aw=1920&amp;u_cd=24&amp;u_his=1&amp;u_tz=120&amp;u_java=true&amp;u_nplug=1&amp;u_nmime=38&amp;data=dynx_itemid%3D692%3Bdynx_itemid2%3D692%3Bdynx_pagetype%3Dofferdetails%3Bdynx_totalvalue%3D117.5&amp;frm=0&amp;url=https%3A%2F%2Fwww.robofun.ro%2Fraspberry-pi-si-componente%2FKit-RASPBERRY-PI-B-pentru-incepatori&amp;ref=https%3A%2F%2Fwww.robofun.ro%2Fraspberry-pi-si-componente&amp;tiba=Kit%20Senzori%20Raspberry%20PI%20-%20BASIC" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="300" height="13" frameborder="0"></iframe><iframe name="google_cookie_match_frame" title="Google cookie match frame" src="Kit%20Senzori%20Raspberry%20PI%20-%20BASIC_files/pixel.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" style="display:none" scrolling="no" width="1" height="1" frameborder="0"></iframe>
+
+<noscript>
+
+<div style="display:inline;">
+
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1052730604/?value=0&amp;guid=ON&amp;script=0"/>
+
+</div>
+
+</noscript>
+
+<!-- //Google Code for Remarketing Tag -->
+
+
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none; padding-bottom: 57px; padding-right: 28px;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>

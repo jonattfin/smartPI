@@ -2,7 +2,10 @@ from ruleEngine import RuleEngine
 from spInterface import SpInterface
 from display import Display
 # from api import CommonApi, LedApi;
-from rules import HumidityRule, TemperatureRule, LuminosityRule, PsutilRule, ButtonRule, MotionRule, CameraRule
+
+from rules import HumidityRule, TemperatureRule, LuminosityRule, MQ135Rule
+from rules import MotionRule, CameraRule
+from rules import PsutilRule
 
 from collections import namedtuple
 
@@ -15,8 +18,10 @@ def main():
     humidity_rule = HumidityRule(Settings(15*60, sp_interface, 1, 5, 2), [Display('humidity')])
     luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 2, 5, 2), [Display('luminosity')])
     motion_rule = MotionRule(Settings(1*60, sp_interface, 3, 5, 2), [Display('presence')])
+    mq135_rule = MQ135Rule(Settings(2*60, sp_interface, 4, 3, 2), [Display('mq135')])
+
     camera_rule = CameraRule(1*60, [Display('image')])
-    psutil_rule = PsutilRule(4*60, [Display('cpu'), Display('memory')])
+    psutil_rule = PsutilRule(4*60, [Display('cpu'), Display('memory'), Display('hdd')])
 
     # led_displays = [Display('blue_led'), Display('red_led'), Display('green_led'), Display('yellow_led')]
     # led_apis = [LedApi(color=2), LedApi(color=1), LedApi(color=4), LedApi(color=3)]

@@ -1,5 +1,4 @@
 import psutil
-
 from .rule import Rule
 
 class PsutilRule(Rule):
@@ -12,7 +11,8 @@ class PsutilRule(Rule):
     def execute(self):
         params = [
             psutil.cpu_percent(),
-            psutil.virtual_memory().percent
+            psutil.virtual_memory().percent,
+            psutil.disk_usage('/').percent
         ]
 
         for display, param in zip(self.displays, params):
