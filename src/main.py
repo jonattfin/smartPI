@@ -74,7 +74,7 @@ def main():
         api = CommonApi('https://api-cleanaircluj.herokuapp.com/api/Resources')
         api.write(params)
 
-        time.sleep(60)
+        time.sleep(15)
 
 
 if __name__ == '__main__':
