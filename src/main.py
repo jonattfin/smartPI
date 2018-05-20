@@ -49,6 +49,7 @@ def main():
         gas = mq135_rule.read()
 
         params = {
+            'id': '5b00bb37734d1d0aaaacb84b',
             'latitude': lat,
             'longitude': long,
             'timespan': datetime.now(),
