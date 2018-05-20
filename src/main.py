@@ -33,6 +33,8 @@ def main():
     mq135_rule = MQ135Rule(
         Settings(2*60, sp_interface, 4, 2, 2), [Display('mq135')])
 
+    print('reading location...')
+
     send_url = 'http://freegeoip.net/json'
 
     r = requests.get(send_url)
@@ -40,7 +42,11 @@ def main():
     lat = j['latitude']
     long = j['longitude']
 
+    print('location is ', lat, long)
+
     while True:
+        print('reading sensors...')
+
         temperature = temp_rule.read()
         convertedTemp = temp_rule.convert(temperature)
 
@@ -56,10 +62,12 @@ def main():
             'temperature': convertedTemp, 'humidity': humidity,
             'luminosity': luminosity, 'co2': gas}
 
+        print('sending data to heroku...')
+
         api = CommonApi('https://api-cleanaircluj.herokuapp.com/api/Resources')
         api.write(params)
 
-        time.sleep(60)
+        time.sleep(10)
 
 
 if __name__ == '__main__':
