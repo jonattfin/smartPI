@@ -54,6 +54,11 @@ def main():
         luminosity = luminosity_rule.read()
         gas = mq135_rule.read()
 
+        print('humidity', humidity)
+        print('luminosity', luminosity)
+        print('gas', gas)
+        print('temperature', convertedTemp)
+
         params = {
             'guid': 'eb203991-4b2a-4950-b57c-18f397315a78',
             'latitude': lat,
