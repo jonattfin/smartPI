@@ -1,7 +1,11 @@
+
+import time
+from collections import namedtuple
+
 from ruleEngine import RuleEngine
 from spInterface import SpInterface
 from display import Display
-# from api import CommonApi, LedApi;
+from api import CommonApi
 
 from rules import HumidityRule, TemperatureRule, LuminosityRule, MQ135Rule
 from rules import MotionRule, CameraRule
@@ -9,30 +13,53 @@ from rules import PsutilRule
 
 from collections import namedtuple
 
+import requests
+import json
+from datetime import datetime
+
+
 def main():
 
     sp_interface = SpInterface()
-    Settings = namedtuple('Settings', 'periodicity sp_interface pin_no number_of_reads time_between_reads')
+    Settings = namedtuple(
+        'Settings', 'periodicity sp_interface pin_no number_of_reads time_between_reads')
 
-    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 5, 2), [Display('temperature')])
-    humidity_rule = HumidityRule(Settings(15*60, sp_interface, 1, 5, 2), [Display('humidity')])
-    luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 2, 5, 2), [Display('luminosity')])
-    motion_rule = MotionRule(Settings(1*60, sp_interface, 3, 5, 2), [Display('presence')])
-    mq135_rule = MQ135Rule(Settings(2*60, sp_interface, 4, 3, 2), [Display('mq135')])
+    temp_rule = TemperatureRule(
+        Settings(10*60, sp_interface, 0, 3, 2), [Display('temperature')])
+    humidity_rule = HumidityRule(
+        Settings(15*60, sp_interface, 1, 3, 2), [Display('humidity')])
+    luminosity_rule = LuminosityRule(
+        Settings(7*60, sp_interface, 2, 3, 2), [Display('luminosity')])
+    mq135_rule = MQ135Rule(
+        Settings(2*60, sp_interface, 4, 2, 2), [Display('mq135')])
 
-    camera_rule = CameraRule(1*60, [Display('image')])
-    psutil_rule = PsutilRule(4*60, [Display('cpu'), Display('memory'), Display('hdd')])
+    send_url = 'http://freegeoip.net/json'
 
-    # led_displays = [Display('blue_led'), Display('red_led'), Display('green_led'), Display('yellow_led')]
-    # led_apis = [LedApi(color=2), LedApi(color=1), LedApi(color=4), LedApi(color=3)]
-    # button_rule = ButtonRule(Settings(1*60, sp_interface, 3, 0, 0), led_displays)
+    r = requests.get(send_url)
+    j = json.loads(r.text)
+    lat = j['latitude']
+    long = j['longitude']
 
-    # add the rules
-    rule_engine = RuleEngine()
-    rule_engine.add_many([psutil_rule, temp_rule, humidity_rule, luminosity_rule, motion_rule, camera_rule, mq135_rule])
+    while True:
+        temperature = temp_rule.read()
+        convertedTemp = temp_rule.convert(temperature)
 
-    # fire up the engine
-    rule_engine.execute()
+        humidity = humidity_rule.read()
+        luminosity = luminosity_rule.read()
+        gas = mq135_rule.read()
+
+        params = {
+            'latitude': lat,
+            'longitude': long,
+            'timespan': datetime.now(),
+            'temperature': convertedTemp, 'humidity': humidity,
+            'luminosity': luminosity, 'co2': gas}
+
+        api = CommonApi('https://api-cleanaircluj.herokuapp.com/api/Resources')
+        api.write(params)
+
+        time.sleep(60)
+
 
 if __name__ == '__main__':
     main()

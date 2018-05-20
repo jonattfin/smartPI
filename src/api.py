@@ -3,37 +3,35 @@ import requests
 
 class CommonApi(object):
 
-    def __init__(self, url, table_name):
-        self.url = url
-        self.table_name = table_name
-
-    def write(self, value):
-        try:
-            params = {'value': value, 'table_name': self.table_name}
-            response = requests.post(self.url, data=params)
-        except Exception as e:
-            print("Error while writing to API")
-
-class LedApi(object):
-
     def __init__(self, url):
         self.url = url
 
-    def write(self, color):
+    def write(self, params):
         try:
-            params = {'color': color}
-            response = requests.post(self.url, data=params)
+            requests.post(self.url, data=params)
         except Exception as e:
-            print("Error while writing led to API")
+            print("Error while writing to API")
 
-if __name__ == '__main__':
-    print('writing temperatures')
+# class LedApi(object):
 
-    common_api = CommonApi("temperatures");
-    common_api.write(1234);
+#     def __init__(self, url):
+#         self.url = url
 
-    led_api = LedApi();
-    led_api.write(1);
-    led_api.write(2);
-    led_api.write(3);
-    led_api.write(4);
+#     def write(self, color):
+#         try:
+#             params = {'color': color}
+#             response = requests.post(self.url, data=params)
+#         except Exception as e:
+#             print("Error while writing led to API")
+
+# if __name__ == '__main__':
+#     print('writing temperatures')
+
+#     common_api = CommonApi("temperatures");
+#     common_api.write(1234);
+
+#     led_api = LedApi();
+#     led_api.write(1);
+#     led_api.write(2);
+#     led_api.write(3);
+#     led_api.write(4);
