@@ -6,3 +6,4 @@ from .psutilRule import PsutilRule
 from .buttonRule import ButtonRule
 from .motionRule import MotionRule
 from .cameraRule import CameraRule
+from .moistureRule import MoistureRule
