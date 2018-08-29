@@ -1,6 +1,9 @@
 from ruleEngine import RuleEngine
 from spInterface import SpInterface
-from display import Display
+# from display import Display
+
+from mqttClient import MqttClient
+
 from api import CommonApi, LedApi
 
 from rules import HumidityRule, TemperatureRule, LuminosityRule, MQ135Rule, MoistureRule
@@ -14,10 +17,10 @@ def main():
     sp_interface = SpInterface()
     Settings = namedtuple('Settings', 'periodicity sp_interface pin_no number_of_reads time_between_reads')
 
-    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 5, 2), [Display('temperature')])
-    humidity_rule = HumidityRule(Settings(15*60, sp_interface, 2, 5, 2), [Display('humidity')])
-    luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 4, 5, 2), [Display('luminosity')])
-    moisture_rule = MoistureRule(Settings(5*60, sp_interface, 6, 3, 2), [Display('moisture')])
+    temp_rule = TemperatureRule(Settings(10*60, sp_interface, 0, 5, 2), [MqttClient('temperature')])
+    humidity_rule = HumidityRule(Settings(15*60, sp_interface, 2, 5, 2), [MqttClient('humidity')])
+    luminosity_rule = LuminosityRule(Settings(7*60, sp_interface, 4, 5, 2), [MqttClient('luminosity')])
+    moisture_rule = MoistureRule(Settings(5*60, sp_interface, 6, 3, 2), [MqttClient('moisture')])
 
     # motion_rule = MotionRule(Settings(1*60, sp_interface, 3, 5, 2), [Display('presence')])
     # mq135_rule = MQ135Rule(Settings(2*60, sp_interface, 4, 3, 2), [Display('mq135')])
